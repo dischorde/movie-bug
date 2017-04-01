@@ -7,11 +7,10 @@ class Api::SearchController < ApplicationController
   end
 
   def create
+    # TODO: should prehaps return an updated index?
     @search = Search.new(search_params)
 
-    if @search.save
-      render :show
-    else
+    unless @search.save
       render json: @search.errors.full_messages, status: 422
     end
   end
@@ -19,7 +18,7 @@ class Api::SearchController < ApplicationController
   private
 
   def search_params
-    params.require(:search).permit(:query, :user_id)
+    params.permit(:query, :user_id)
   end
 
 end
