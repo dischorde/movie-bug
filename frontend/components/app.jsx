@@ -1,8 +1,9 @@
 import React from 'react';
+import NavBarContainer from './nav_bar/nav_bar_container.jsx';
 
 const App = ({ children }) => (
   <div>
-    <h1>Movie Bug</h1>
+    <NavBarContainer />
     { children }
   </div>
 );

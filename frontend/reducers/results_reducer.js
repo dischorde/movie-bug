@@ -1,7 +1,7 @@
 import { RECEIVE_RESULTS } from '../actions/result_actions.js';
 import merge from 'lodash/merge';
 
-const ResultsReducer = (state = {}, action) => {
+const ResultsReducer = (state = [], action) => {
   Object.freeze(state);
 
   switch(action.type) {
