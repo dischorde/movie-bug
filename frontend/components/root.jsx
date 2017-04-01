@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app.jsx';
 import SearchContainer from './search/search_container.jsx';
+import SearchResultsContainer from './search/search_results_container.jsx';
 
 const Root = ({ store }) => (
   <Provider store={ store }>
@@ -10,6 +11,7 @@ const Root = ({ store }) => (
        <Route path="/" component={ App }>
          <IndexRoute component={ SearchContainer } />
          <Route path="/search" component={ SearchContainer } />
+         <Route path="/results" component={ SearchResultsContainer } />
        </Route>
     </Router>
   </Provider>

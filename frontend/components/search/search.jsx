@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 
 class Search extends React.Component {
   constructor(props) {
@@ -20,8 +20,8 @@ class Search extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     if (this.state.query !== "") {
-      this.props.fetchSearchResults(this.state.query);
-      // TODO: .then redirect to search results component
+      this.props.fetchSearchResults(this.state.query)
+      .then(() => this.props.router.push("/results"));
     }
     // TODO: error handling
   }
@@ -45,4 +45,4 @@ class Search extends React.Component {
   }
 }
 
-export default Search;
+export default withRouter(Search);
