@@ -1,7 +1,6 @@
 import { RECEIVE_SEARCHES } from '../actions/search_actions.js';
-import merge from 'lodash/merge';
 
-const RecentSearchesReducer = (state = [], action) => {
+const recentSearchesReducer = (state = [], action) => {
   Object.freeze(state);
 
   switch(action.type) {
@@ -12,4 +11,4 @@ const RecentSearchesReducer = (state = [], action) => {
   }
 };
 
-export default RecentSearchesReducer;
+export default recentSearchesReducer;

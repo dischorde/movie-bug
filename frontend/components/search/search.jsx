@@ -30,7 +30,7 @@ class Search extends React.Component {
     const { recentSearches } = this.props;
     let recentsLinks;
     if (recentSearches) {
-      let elements = recentSearches.map(el => <li>{el}</li>);
+      let elements = recentSearches.map((el, idx) => <li key={idx} >{el}</li>);
       recentsLinks = <ul>
         { elements }
       </ul>;

@@ -1,7 +1,6 @@
 import { RECEIVE_RESULTS } from '../actions/search_actions.js';
-import merge from 'lodash/merge';
 
-const ResultsReducer = (state = [], action) => {
+const resultsReducer = (state = [], action) => {
   Object.freeze(state);
 
   switch(action.type) {
@@ -12,4 +11,4 @@ const ResultsReducer = (state = [], action) => {
   }
 };
 
-export default ResultsReducer;
+export default resultsReducer;
