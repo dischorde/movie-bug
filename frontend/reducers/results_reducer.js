@@ -1,4 +1,4 @@
-import { RECEIVE_RESULTS } from '../actions/result_actions.js';
+import { RECEIVE_RESULTS } from '../actions/search_actions.js';
 import merge from 'lodash/merge';
 
 const ResultsReducer = (state = [], action) => {

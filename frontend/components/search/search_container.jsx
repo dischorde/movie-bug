@@ -1,13 +1,21 @@
 import { connect } from 'react-redux';
 import Search from './search.jsx';
-import { fetchSearchResults } from '../../actions/result_actions.js';
+import { fetchSearchResults, saveSearchQuery } from '../../actions/search_actions.js';
 
 const mapStateToProps = state => ({
+  recentSearches: state.recentSearches
 });
 
-const mapDispatchToProps = dispatch => ({
-  fetchSearchResults: query => dispatch(fetchSearchResults(query))
-});
+const mapDispatchToProps = dispatch => {
+  const search = query => {
+    dispatch(saveSearchQuery(query));
+    return dispatch(fetchSearchResults(query));
+  };
+
+  return {
+    search
+  };
+};
 
 export default connect(
   mapStateToProps,
