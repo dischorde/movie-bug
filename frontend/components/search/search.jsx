@@ -11,6 +11,10 @@ class Search extends React.Component {
     this.updateQuery = this.updateQuery.bind(this);
   }
 
+  componentDidMount() {
+    this.props.requestRecentSearches();
+  }
+
   updateQuery(e) {
     this.setState({
       query: e.currentTarget.value

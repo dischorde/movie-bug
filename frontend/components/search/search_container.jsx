@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import Search from './search.jsx';
-import { fetchSearchResults, saveSearchQuery } from '../../actions/search_actions.js';
+import { fetchSearchResults,
+         saveSearchQuery,
+         requestRecentSearches } from '../../actions/search_actions.js';
 
 const mapStateToProps = state => ({
   recentSearches: state.recentSearches
@@ -13,6 +15,7 @@ const mapDispatchToProps = dispatch => {
   };
 
   return {
+    requestRecentSearches: () => dispatch(requestRecentSearches()),
     search
   };
 };

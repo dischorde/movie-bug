@@ -8,10 +8,7 @@ class Api::SearchController < ApplicationController
   def create
     search = Search.new(search_params)
 
-    if search.save
-      get_recent_searches
-      render json: @searches.map(&:query)
-    else
+    unless search.save
       render json: search.errors.full_messages, status: 422
     end
 
@@ -25,7 +22,7 @@ class Api::SearchController < ApplicationController
     # belonging to said user
     if current_user
     else
-      @searches = Search.order(created_at: :desc).limit(10)
+      @searches = Search.order(created_at: :desc).limit(5)
     end
   end
 

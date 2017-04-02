@@ -5,3 +5,10 @@ export const saveSearch = query => (
     data: { query }
   })
 );
+
+export const fetchSearches = () => (
+  $.ajax({
+    method: 'GET',
+    url: '/api/search'
+  })
+);
