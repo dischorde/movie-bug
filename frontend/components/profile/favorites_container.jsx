@@ -4,11 +4,12 @@ import { requestAllFavorites } from '../../actions/favorite_actions.js';
 import { selectFavoritedMedia } from '../../reducers/selectors.js';
 
 const mapStateToProps = state => ({
-  favorites: selectFavoritedMedia(state)
+  favorites: selectFavoritedMedia(state),
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
-  requestAllFavorites: () => dispatch(requestAllFavorites())
+  requestAllFavorites: (userId) => dispatch(requestAllFavorites(userId))
 });
 
 export default connect(

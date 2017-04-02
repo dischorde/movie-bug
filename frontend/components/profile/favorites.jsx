@@ -7,7 +7,7 @@ class Favorites extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestAllFavorites();
+    this.props.requestAllFavorites(this.props.currentUser.id);
   }
 
   render() {
