@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import SearchLink from './search_link.jsx';
 
 class Search extends React.Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class Search extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateQuery = this.updateQuery.bind(this);
+    this.submitSearch = this.submitSearch.bind(this);
   }
 
   componentDidMount() {
@@ -24,20 +26,26 @@ class Search extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     if (this.state.query !== "") {
-      this.props.search(this.state.query)
-      .then(() => this.props.router.push("/results"));
+      this.submitSearch(this.state.query);
     }
     // TODO: error handling
+  }
+
+  submitSearch(query) {
+    this.props.search(query)
+    .then(() => this.props.router.push("/results"));
   }
 
   render() {
     const { recentSearches } = this.props;
     let recentsLinks;
     if (recentSearches) {
-      let elements = recentSearches.map((el, idx) => <li key={idx} >{el}</li>);
-      recentsLinks = <ul>
-        { elements }
-      </ul>;
+      recentsLinks = recentSearches.map((query, idx) => {
+        return <SearchLink key={idx}
+                            idx={idx}
+                            query={query}
+                            submitSearch={this.submitSearch} />;
+      });
     }
 
     return (
@@ -53,7 +61,9 @@ class Search extends React.Component {
             placeholder="Search by title, keyword..." />
           <button>Search</button>
         </form>
-        { recentsLinks }
+        <ul>
+          { recentsLinks }
+        </ul>
       </section>
     );
   }
