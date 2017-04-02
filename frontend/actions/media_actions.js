@@ -7,7 +7,7 @@ export const receiveMediaDetail = media => ({
     media
 });
 
-export const fetchMediaDetail = mediaId => dispatch => {
+export const requestMediaDetail = mediaId => dispatch => {
   return OMDBAPIUtil.fetchMedia(mediaId)
   .then(media => dispatch(receiveMediaDetail(media)));
 };

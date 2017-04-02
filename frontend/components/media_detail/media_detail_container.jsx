@@ -1,14 +1,14 @@
 import { connect } from 'react-redux';
-import { fetchMediaDetail } from '../../actions/media_actions.js';
+import { requestMediaDetail } from '../../actions/media_actions.js';
 import { selectMediaDetail } from '../../reducers/selectors.js';
 import MediaDetail from './media_detail.jsx';
 
 const mapStateToProps = (state, ownProps) => ({
-  mediaDetail: selectMediaDetail(state, ownProps.imdbID)
+  mediaDetail: selectMediaDetail(state, ownProps.params.imdbID)
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchMediaDetail: (imdbID) => dispatch(fetchMediaDetail(imdbID))
+  requestMediaDetail: (imdbID) => dispatch(requestMediaDetail(imdbID))
 });
 
 export default connect(
