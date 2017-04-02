@@ -16,13 +16,13 @@ class Api::FavoritesController < ApplicationController
 
   def destroy
     @favorite = Favorite.find(params[:id])
-    @favorite.destory
+    @favorite.destroy
     render :show
   end
 
   private
 
   def favorite_params
-    params.require(:favorite).permit(:imdb_id, :title, :year, :type, :poster)
+    params.require(:favorite).permit(:imdb_id, :title, :year, :media_type, :poster)
   end
 end
