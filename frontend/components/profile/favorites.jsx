@@ -6,11 +6,16 @@ class Favorites extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.requestAllFavorites();
+  }
+
   render() {
-    // let { favorites } = this.props;
-    // <MediaList elements={favorites} />
+    let { favorites } = this.props;
+
     return (
       <section className="favorited-media">
+        <MediaList type="favorite" elements={favorites} />
       </section>
     );
   }

@@ -7,11 +7,11 @@ class MediaList extends React.Component {
   }
 
   render() {
-    const { elements } = this.props;
+    const { elements, type } = this.props;
     let listItems;
     if (elements) {
-      listItems = elements.map(element => (
-        <MediaListItem key={element.imdbID} element={element} />
+      listItems = elements.map((element, idx) => (
+        <MediaListItem key={idx} element={element} type={type}/>
       ));
     }
 

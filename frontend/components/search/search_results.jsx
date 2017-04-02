@@ -11,7 +11,7 @@ class SearchResults extends React.Component {
     return (
       <section className="search-results">
         <h2>Search Results</h2>
-        <MediaList elements={results} />
+        <MediaList type="results" elements={results} />
       </section>
     );
   }

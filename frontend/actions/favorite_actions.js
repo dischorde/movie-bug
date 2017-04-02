@@ -25,7 +25,7 @@ export const receiveFavoriteErrors = errors => ({
   errors
 });
 
-export const fetchAllFavorites = () => dispatch => {
+export const requestAllFavorites = () => dispatch => {
   return FavoriteAPIUtil.fetchFavorites()
   .then(favorites => dispatch(receiveAllFavorites(favorites)));
 };
