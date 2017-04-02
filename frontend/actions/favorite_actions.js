@@ -36,8 +36,8 @@ export const createFavorite = favorite => dispatch => {
   .fail(errors => dispatch(receiveFavoriteErrors(errors)));
 };
 
-export const deleteFavorite = favoriteId => dispatch => {
-  return FavoriteAPIUtil.destroyFavorite(favoriteId)
+export const deleteFavorite = imdbId => dispatch => {
+  return FavoriteAPIUtil.destroyFavorite(imdbId)
   .then(deleted => dispatch(removeFavorite(deleted)))
   .fail(errors => dispatch(receiveFavoriteErrors(errors)));
 };

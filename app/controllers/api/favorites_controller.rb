@@ -15,7 +15,8 @@ class Api::FavoritesController < ApplicationController
   end
 
   def destroy
-    @favorite = Favorite.find(params[:id])
+    @favorite = Favorite.find_by(imdb_id: params[:id],
+                                 user_id: current_user.id)
     @favorite.destroy
     render :show
   end

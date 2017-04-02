@@ -13,9 +13,9 @@ export const createNewFavorite = favorite => (
   })
 );
 
-export const destroyFavorite = id => (
+export const destroyFavorite = imdbId => (
   $.ajax({
     method: 'DELETE',
-    url: `/api/favorites/${id}`,
+    url: `/api/favorites/${imdbId}`,
   })
 );
