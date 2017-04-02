@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170331231945) do
+ActiveRecord::Schema.define(version: 20170402062641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.string   "imdb_id",    null: false
+    t.string   "title",      null: false
+    t.string   "year"
+    t.string   "type"
+    t.string   "poster"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "imdb_id"], name: "index_favorites_on_user_id_and_imdb_id", unique: true, using: :btree
+    t.index ["user_id"], name: "index_favorites_on_user_id", using: :btree
+  end
 
   create_table "searches", force: :cascade do |t|
     t.string   "query",      null: false
