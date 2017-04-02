@@ -2,16 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store.js';
 import Root from './components/root.jsx';
-import { requestMediaDetail } from './actions/media_actions.js';
-import { fetchMedia } from './util/omdb_api_util.js';
-import { selectMediaDetail } from './reducers/selectors.js';
+import { signup, signin, signout } from './actions/session_actions.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
-    const store = configureStore();
-    ReactDOM.render(<Root store={ store }/>, root);
+    let store;
+    if (window.currentUser) {
+      const preloadedState = { session: { currentUser: window.currentUser } };
+      store = configureStore(preloadedState);
+    } else {
+      store = configureStore();
+    }
+
     window.store = store;
-    window.requestMediaDetail = requestMediaDetail;
-    window.fetchMedia = fetchMedia;
-    window.selectMediaDetail = selectMediaDetail;
+    window.signup = signup;
+    window.signin = signin;
+    window.signout = signout;
+
+    ReactDOM.render(<Root store={ store }/>, root);
 });

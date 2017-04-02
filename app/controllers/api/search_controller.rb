@@ -7,6 +7,7 @@ class Api::SearchController < ApplicationController
 
   def create
     search = Search.new(search_params)
+    search.user_id = current_user.id if signed_in?
 
     unless search.save
       render json: search.errors.full_messages, status: 422
@@ -17,10 +18,8 @@ class Api::SearchController < ApplicationController
   private
 
   def get_recent_searches
-    # TODO: return a certain amount of all recent searches if not logged in
-    # if logged in return a certain amount of most recent searches
-    # belonging to said user
     if current_user
+      @searches = Search.where(user_id: current_user.id).order(created_at: :desc)
     else
       @searches = Search.order(created_at: :desc).limit(5)
     end

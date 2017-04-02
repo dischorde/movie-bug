@@ -4,6 +4,13 @@
     <title>MovieBug</title>
     <%= csrf_meta_tags %>
 
+    <script type="text/javascript">
+      <% if signed_in? %>
+      	window.currentUser = <%= render("api/users/user.json.jbuilder",
+      		user: current_user).html_safe %>
+      <% end %>
+    </script>
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
