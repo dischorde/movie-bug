@@ -1,4 +1,4 @@
-export const fetchFavorites = (user_id) => (
+export const fetchFavorites = user_id => (
   $.ajax({
     method: 'GET',
     url: '/api/favorites',
@@ -6,7 +6,7 @@ export const fetchFavorites = (user_id) => (
   })
 );
 
-export const fetchFavoritedList = (user_id) => (
+export const fetchFavoritedList = user_id => (
   $.ajax({
     method: 'GET',
     url: '/api/favorites/?list=true',

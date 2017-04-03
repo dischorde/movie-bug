@@ -1,4 +1,16 @@
 .search {
-  background: linear-gradient(rgba(255, 212, 0, 0.05), rgba(86, 159, 139, 0.26));
+  // background: linear-gradient(rgba(255, 212, 0, 0.05), rgba(86, 159, 139, 0.26));
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 100px 0 0 0;
+  width: 80%;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.search-topic {
+  color: $canary;
+  text-decoration: underline;
+  font-weight: 500;
 }
