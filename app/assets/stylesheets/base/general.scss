@@ -2,10 +2,40 @@ body {
   font-family: $open-sans;
   font-size: 15px;
   font-weight: 300;
+  color: $charcoal;
+  height: 100vh;
+  overflow: hidden;
 }
 
 h1 {
   font-family: $montserrat;
   font-size: 24px;
   font-weight: 400;
+}
+
+
+a {
+  color: $charcoal;
+  white-space: nowrap;
+}
+
+a:hover {
+  color: $canary;
+}
+
+button, .button {
+  font-family: $montserrat;
+  font-size: 14px;
+  background: $canary;
+	color: white;
+  text-transform: uppercase;
+	padding: 8px 15px;
+	border-radius: 100px;
+	text-align: center;
+  display: inline-block;
+  min-width: 150px;
+  height: 40px;
+  // -webkit-font-smoothing: antialiased;
+  line-height: 1;
+  white-space: nowrap;
 }

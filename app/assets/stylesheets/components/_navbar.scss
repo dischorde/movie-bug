@@ -1,0 +1,40 @@
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 75px;
+  color: black;
+  border-bottom: 2px solid $light-grey;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  width: 100vw;
+  font-weight: 400;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-logo {
+  width: 70%;
+}
+
+.nav-links > ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-links li {
+  padding: 0 20px 0 20px;
+}
+
+.nav-logo {
+  padding-left: 20px;
+  font-family: $montserrat;
+  font-size: 28px;
+  font-weight: 500;
+}

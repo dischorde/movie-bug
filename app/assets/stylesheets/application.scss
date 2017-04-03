@@ -14,7 +14,7 @@
  */
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
 
  // CSS Reset
 @import "base/reset.scss";
@@ -25,4 +25,4 @@
 @import "base/general.scss";
 
 // Components
-// @import "components/*";
+@import "components/*";
