@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 import Modal from 'react-modal';
 import SessionForm from '../session_form/session_form.jsx';
 
@@ -38,7 +38,8 @@ class NavBar extends React.Component {
 
   signOut(e) {
     e.preventDefault();
-    this.props.signout();
+    this.props.signout()
+    .then(() => this.props.router.push("/"));
   }
 
   render() {
@@ -95,4 +96,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);
