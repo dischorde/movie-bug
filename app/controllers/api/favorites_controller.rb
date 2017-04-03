@@ -6,7 +6,7 @@ class Api::FavoritesController < ApplicationController
 
   def create
     @favorite = Favorite.new(favorite_params)
-
+    @favorite.user_id = @favorite.user_id.to_i
     if @favorite.save
       render :show
     else

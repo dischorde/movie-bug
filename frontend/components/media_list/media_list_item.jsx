@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import FavoriteButtonContainer from './favorite_button_container.jsx';
 
 const MediaListItem = ({element, type}) => {
   let imdbId = "imdbID";
@@ -22,6 +23,7 @@ const MediaListItem = ({element, type}) => {
           <h3>{element[title]}</h3>
         </Link>
         <h4>{element[year]}</h4>
+        <FavoriteButtonContainer type={type} element={element} />
       </section>
     </li>
   );
