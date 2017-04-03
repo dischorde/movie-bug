@@ -25,11 +25,11 @@ const favoritesReducer = (state = _nullState, action) => {
       return newState;
     case RECEIVE_FAVORITE:
       newState.media[action.favorite.id] = action.favorite;
-      newState.list[action.favorite.id] = true;
+      newState.list[action.favorite.imdb_id] = true;
       return newState;
     case REMOVE_FAVORITE:
       delete newState.media[action.favorite.id];
-      delete newState.list[action.favorite.id];
+      delete newState.list[action.favorite.imdb_id];
       return newState;
     case RECEIVE_FAVORITE_ERRORS:
       newState.errors = action.errors;
