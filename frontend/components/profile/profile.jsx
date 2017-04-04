@@ -13,6 +13,7 @@ class SearchResults extends React.Component {
         <div className="switch-tabs">
           <ul>
             <Link to="/profile/favorites"><li>Favorites</li></Link>
+            <li>{"|"}</li>
             <Link to="/profile/recent-searches"><li>Recent Searches</li></Link>
           </ul>
         </div>

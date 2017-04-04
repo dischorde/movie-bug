@@ -1,0 +1,21 @@
+.profile {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.switch-tabs {
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.switch-tabs > ul {
+  display: flex;
+  font-size: 24px;
+  font-weight: 400;
+  justify-content: center;
+}
+
+.switch-tabs li {
+  padding: 0 10px;
+}

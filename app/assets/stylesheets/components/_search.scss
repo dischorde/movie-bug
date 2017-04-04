@@ -18,7 +18,7 @@
 
 .search-bar {
   width: 90%;
-  border: 1px solid hsla(240, 3%, 80%, 1);
+  border: 1px solid $grey;
   border-radius: 100px;
   padding: 10px;
   display: flex;
@@ -55,7 +55,7 @@
 }
 
 .search-recent-links a {
-  color: #009688;
+  color: $teal;
 }
 
 .search-recent-links li {
