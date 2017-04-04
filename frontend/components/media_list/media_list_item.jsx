@@ -50,12 +50,14 @@ class MediaListItem extends React.Component {
     return (
       <li key={element.imdbId}>
         <section className="media-list-item">
-          <img src={element.poster} />
+          <Link to={`/results/${element.imdbId}`} className="no-hover-effects">
+            <img src={element.poster} />
+          </Link>
           <div className="media-info">
             <Link to={`/results/${element.imdbId}`}>
-              <h3>{title}</h3>
+              <h4>{title}</h4>
             </Link>
-            <h4>{element.year}</h4>
+            <h5>{element.year}</h5>
           </div>
           <FavoriteButtonContainer type={type} element={this.props.element} />
         </section>

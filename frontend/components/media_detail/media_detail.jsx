@@ -22,21 +22,34 @@ class MediaDetail extends React.Component {
 
   render() {
     const { mediaDetail } = this.props;
-    // TODO: pick what should be on here and style
+    let visibility = "";
+    if (mediaDetail.Poster === "N/A") {
+      visibility = "hidden";
+    }
+    console.log(mediaDetail.Poster === "N/A");
+    console.log(visibility);
     return (
       <section className="media-detail">
-        <img src={mediaDetail.Poster} />
-        <h3>{mediaDetail.Title}</h3>
-        <h4>{mediaDetail.Released}</h4>
-        <h4>{mediaDetail.Runtime}</h4>
-        <h4>{mediaDetail.Genre}</h4>
-        <h4>{mediaDetail.Director}</h4>
-        <h4>{mediaDetail.Writer}</h4>
-        <h4>{mediaDetail.Actors}</h4>
-        <h4>{mediaDetail.Plot}</h4>
-        <h4>{mediaDetail.Awards}</h4>
-        <h4>{mediaDetail.BoxOffice}</h4>
-        <h4>{mediaDetail.imdbRating}</h4>
+        <img src={mediaDetail.Poster} className={visibility}/>
+        <div className="media-detail-info-wrapper">
+          <h2>{mediaDetail.Title}</h2>
+            <div className="media-detail-info">
+              <p>
+                Released {mediaDetail.Released} | {mediaDetail.Genre} | {mediaDetail.imdbRating}/10
+              </p>
+              <br />
+              <ul className="cast-info">
+                <li><span className="label">Director:</span> {mediaDetail.Director}</li>
+                <li><span className="label">Writer:</span> {mediaDetail.Writer}</li>
+                <li><span className="label">Actors:</span> {mediaDetail.Actors}</li>
+              </ul>
+              <br />
+              <p>{mediaDetail.Plot}</p>
+              <br />
+              <p>{mediaDetail.Awards}</p>
+              <p>{mediaDetail.Runtime}, Rated {mediaDetail.Rated}</p>
+            </div>
+        </div>
       </section>
     );
   }

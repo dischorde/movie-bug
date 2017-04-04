@@ -10,7 +10,7 @@ class SearchResults extends React.Component {
     let { results } = this.props;
     return (
       <section className="search-results">
-        <h2>Search Results</h2>
+        <h3>Search Results</h3>
         <MediaList type="results" elements={results} />
       </section>
     );

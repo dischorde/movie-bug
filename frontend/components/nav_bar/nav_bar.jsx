@@ -57,7 +57,7 @@ class NavBar extends React.Component {
     return (
       <header>
         <div className="nav-logo">
-          <span><Link to="/"><h2>MovieBug</h2></Link></span>
+          <span><Link to="/"><h3>MovieBug</h3></Link></span>
         </div>
         <nav className="nav-links">
           <ul>

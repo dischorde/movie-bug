@@ -1,0 +1,34 @@
+.media-detail {
+  width: 80%;
+  margin: 60px auto 0 auto;
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.media-detail img {
+  // width: inherit;
+}
+
+.media-detail-info-wrapper {
+  padding: 5px 20px;
+  max-width: 70%;
+}
+
+.media-detail-info {
+  margin-top: 15px;
+}
+
+.cast-info li {
+  padding: 10px 0;
+}
+
+.label {
+  font-weight: 400;
+}
+
+.media-detail-info p:first-of-type {
+  font-size: 18px;
+  font-weight: 400;
+}
