@@ -52,18 +52,24 @@ class Search extends React.Component {
       <section className="search">
         <form onSubmit={this.handleSubmit}>
           <h1>
-            <span>Learn more about your favorite </span><span className="search-topic">Movies</span>
+            <span>Learn more about your favorite </span>
+            <span className="search-topic">Movies</span>
           </h1>
-          <input
-            type="text"
-            className="search-bar"
-            onChange={this.updateQuery}
-            placeholder="Search by title, keyword..." />
-          <button>Search</button>
+          <div className="search-bar">
+            <input
+              type="text"
+              className="search-input"
+              onChange={this.updateQuery}
+              placeholder="Search by title, keyword..." />
+            <button>Search</button>
+          </div>
         </form>
-        <ul>
-          { recentsLinks }
-        </ul>
+        <div className="search-recent-links">
+          <span>{"Search for things like: "}</span>
+          <ul>
+            { recentsLinks }
+          </ul>
+        </div>
       </section>
     );
   }
