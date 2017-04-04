@@ -19,3 +19,28 @@
 .switch-tabs li {
   padding: 0 10px;
 }
+
+.my-recent-searches {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  margin-top: 60px;
+}
+
+.my-recent-searches > ul {
+  list-style: circle;
+  color: $canary;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.my-recent-searches li {
+  margin: 20px;
+  font-size: 20px;
+}
+
+.my-recent-searches a {
+  font-family: $montserrat;
+  color: $canary;
+}
