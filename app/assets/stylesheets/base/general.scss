@@ -12,13 +12,30 @@ h1 {
   font-weight: 400;
 }
 
+h2 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 18px;
+  font-family: $montserrat;
+}
+
+h4 {
+  font-size: 16px;
+}
+
 a {
   color: $charcoal;
   white-space: nowrap;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
 }
 
 a:hover {
-  color: $canary;
+  border-bottom: 2px solid $canary;
+  cursor: pointer;
 }
 
 button, .button {
@@ -33,7 +50,6 @@ button, .button {
   display: inline-block;
   min-width: 150px;
   height: 40px;
-  // -webkit-font-smoothing: antialiased;
   line-height: 1;
   white-space: nowrap;
 }

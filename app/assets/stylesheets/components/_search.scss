@@ -58,6 +58,10 @@
   color: $teal;
 }
 
+.search-recent-links a:hover {
+  border-bottom: 2px solid $teal;
+}
+
 .search-recent-links li {
   padding: 0 5px;
 }
