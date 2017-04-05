@@ -35,6 +35,7 @@ class FavoriteButton extends React.Component {
     favorite.title = element.Title;
     favorite.imdb_id = element.imdbID;
     favorite.poster = element.Poster;
+    favorite.year = element.Year;
     favorite.media_type = element.Type;
     favorite.user_id = currentUser.id;
 

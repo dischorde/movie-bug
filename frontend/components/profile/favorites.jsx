@@ -1,5 +1,5 @@
 import React from 'react';
-import MediaList from '../media_list/media_list.jsx';
+import MediaList from '../shared/media_list.jsx';
 
 class Favorites extends React.Component {
   constructor(props) {

@@ -8,7 +8,8 @@
 }
 
 .media-detail img {
-  // width: inherit;
+  height: 100%;
+  max-width: 100%;
 }
 
 .media-detail-info-wrapper {
@@ -21,14 +22,22 @@
 }
 
 .cast-info li {
-  padding: 10px 0;
+  padding: 6px 0;
 }
 
 .label {
   font-weight: 400;
 }
 
-.media-detail-info p:first-of-type {
+.detail-subheader {
   font-size: 18px;
   font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.detail-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
 }

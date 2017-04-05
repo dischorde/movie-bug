@@ -8,3 +8,9 @@
 .search-results h3 {
   margin: 0 auto;
 }
+
+.greyed-out {
+  background: white;
+  color: $charcoal;
+  border: 1px solid $grey;
+}

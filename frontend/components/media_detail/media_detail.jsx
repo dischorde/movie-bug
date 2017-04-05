@@ -1,5 +1,6 @@
 import React from 'react';
 import { isEmpty } from 'lodash';
+import FavoriteButtonContainer from '../shared/favorite_button_container.jsx';
 
 class MediaDetail extends React.Component {
   constructor(props) {
@@ -32,12 +33,14 @@ class MediaDetail extends React.Component {
       <section className="media-detail">
         <img src={mediaDetail.Poster} className={visibility}/>
         <div className="media-detail-info-wrapper">
+        <div className="detail-header">
           <h2>{mediaDetail.Title}</h2>
+          <FavoriteButtonContainer type="detail" element={mediaDetail} />
+        </div>
             <div className="media-detail-info">
-              <p>
+              <p className="detail-subheader">
                 Released {mediaDetail.Released} | {mediaDetail.Genre} | {mediaDetail.imdbRating}/10
               </p>
-              <br />
               <ul className="cast-info">
                 <li><span className="label">Director:</span> {mediaDetail.Director}</li>
                 <li><span className="label">Writer:</span> {mediaDetail.Writer}</li>
