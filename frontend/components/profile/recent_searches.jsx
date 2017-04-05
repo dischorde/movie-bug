@@ -9,7 +9,8 @@ class RecentSearches extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestRecentSearches();
+    console.log(this.props.currentUser.id);
+    this.props.requestUserSearches(this.props.currentUser.id);
   }
 
   submitSearch(query) {

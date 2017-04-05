@@ -18,10 +18,11 @@ class Api::SearchController < ApplicationController
   private
 
   def get_recent_searches
-    if current_user
-      @searches = Search.where(user_id: current_user.id).order(created_at: :desc)
+    if search_params[:user_id]
+      @searches = Search.where(user_id: search_params[:user_id].to_i).order(created_at: :desc)
     else
-      @searches = Search.order(created_at: :desc).limit(5)
+      ten_recent = Search.order(created_at: :desc).limit(10)
+      @searches = ten_recent.shuffle[0...5]
     end
   end
 

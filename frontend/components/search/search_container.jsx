@@ -1,12 +1,11 @@
 import { connect } from 'react-redux';
 import Search from './search.jsx';
-import { limitFive } from '../../reducers/selectors.js';
 import { fetchSearchResults,
          saveSearchQuery,
          requestRecentSearches } from '../../actions/search_actions.js';
 
 const mapStateToProps = state => ({
-  recentSearches: limitFive(state)
+  recentSearches: state.recentSearches
 });
 
 const mapDispatchToProps = dispatch => {

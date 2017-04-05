@@ -24,6 +24,11 @@ export const saveSearchQuery = query => dispatch => {
 };
 
 export const requestRecentSearches = () => dispatch => {
-  return SearchAPIUtil.fetchSearches()
+  return SearchAPIUtil.fetchRecentSearches()
+  .then(recents => dispatch(receiveRecentSearches(recents)));
+};
+
+export const requestUserSearches = userId => dispatch => {
+  return SearchAPIUtil.fetchUserSearches(userId)
   .then(recents => dispatch(receiveRecentSearches(recents)));
 };

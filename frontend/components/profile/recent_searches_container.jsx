@@ -2,10 +2,11 @@ import { connect } from 'react-redux';
 import RecentSearches from './recent_searches.jsx';
 import { fetchSearchResults,
          saveSearchQuery,
-         requestRecentSearches } from '../../actions/search_actions.js';
+         requestUserSearches } from '../../actions/search_actions.js';
 
 const mapStateToProps = state => ({
-  recentSearches: state.recentSearches
+  recentSearches: state.recentSearches,
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => {
@@ -15,7 +16,7 @@ const mapDispatchToProps = dispatch => {
   };
 
   return {
-    requestRecentSearches: () => dispatch(requestRecentSearches()),
+    requestUserSearches: (userId) => dispatch(requestUserSearches(userId)),
     search
   };
 };

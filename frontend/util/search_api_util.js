@@ -6,9 +6,17 @@ export const saveSearch = query => (
   })
 );
 
-export const fetchSearches = () => (
+export const fetchRecentSearches = () => (
   $.ajax({
     method: 'GET',
     url: '/api/search'
+  })
+);
+
+export const fetchUserSearches = user_id => (
+  $.ajax({
+    method: 'GET',
+    url: '/api/search',
+    data: { user_id }
   })
 );
