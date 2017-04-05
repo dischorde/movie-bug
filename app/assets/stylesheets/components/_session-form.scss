@@ -1,0 +1,63 @@
+.session-form {
+  width: 500px;
+  height: 490px;
+  background-color: white;
+  border: 2px solid $canary;
+  padding: 50px;
+}
+
+.session-form h1 {
+  color: $teal;
+}
+
+.session-form h3 {
+  margin-top: 20px;
+}
+
+.session-form form {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.session-separator {
+  border-bottom: 2px solid $charcoal;
+  padding-top: 30px;
+}
+
+.session-form input {
+  width: 100%;
+  border: 1px solid #DBDBDB;
+  line-height: 24px;
+  font-size: 16px;
+  padding: 5px;
+  margin: 5px 0;
+  font-family: $open-sans;
+}
+
+.session-form button {
+  margin-top: 10px;
+}
+
+.switch-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.session-form a {
+  display: block;
+  padding-bottom: 10px;
+  font-weight: 400;
+}
+
+.session-form a:hover {
+  border-bottom: 2px solid transparent;
+  color: $teal;
+}
+
+.session-form a:first-of-type {
+  padding-top: 20px;
+}

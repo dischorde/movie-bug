@@ -81,6 +81,8 @@ class NavBar extends React.Component {
               left                  : '50%',
               right                 : 'auto',
               bottom                : 'auto',
+              border                : '1px solid transparent',
+              backgroundColor       : 'transparent',
               transform             : 'translate(-50%, -50%)'
           } }}
           >

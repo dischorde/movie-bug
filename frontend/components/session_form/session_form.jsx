@@ -56,7 +56,7 @@ class SessionForm extends React.Component {
   }
 
   makeLink() {
-    if (this.state.formType === 'signin') {
+    if (this.state.formType === "signin") {
       return (
           <a href="#" onClick={this.switchForm("signup")}>
             {"Haven't Joined? Click to Sign Up!"}
@@ -65,15 +65,20 @@ class SessionForm extends React.Component {
     }
     else {
       return (
+        <div className="switch-form">
           <a href="#" onClick={this.switchForm("signin")}>
             {"Already Signed Up? Click to Sign In!"}
           </a>
+          <a>{"Demo Login"}</a>
+        </div>
       );
     }
   }
 
   render() {
     const { username, password } = this.state.user;
+
+    const signState = this.state.formType == "signin" ? "Sign In" : "Sign Up";
 
     let errors;
     if (this.props.errors.length > 0) {
@@ -83,27 +88,27 @@ class SessionForm extends React.Component {
 
     return (
       <section className="session-form">
+        <h1>{signState} to</h1>
+        <h1>Save Favorites!</h1>
+        <h3>And View Recent Searches</h3>
+        <div className="session-separator"></div>
         <form onSubmit={this.processForm}>
           <ul className="errors">
-            { errors }
+            {errors}
           </ul>
-          <label>Username:
-            <input type="text"
-                   value={username}
-                   onChange={this.updateState("username")}
-                   placeholder="Username" />
-          </label>
-          <label>Password:
-            <input type="password"
-                   value={password}
-                   onChange={this.updateState("password")}
-                   placeholder="Password"/>
-          </label>
+          <input type="text"
+                 value={username}
+                 onChange={this.updateState("username")}
+                 placeholder="Username" />
+          <input type="password"
+                 value={password}
+                 onChange={this.updateState("password")}
+                 placeholder="Password"/>
           <button>
-            {this.state.formType === "signin" ? "Sign In" : "Sign Up"}
+            {signState}
           </button>
+          { this.makeLink() }
         </form>
-        { this.makeLink() }
       </section>
     );
   }
