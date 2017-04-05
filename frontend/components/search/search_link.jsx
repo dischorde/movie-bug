@@ -5,10 +5,10 @@ const SearchLink = ({query, idx, submitSearch}) => {
     e.preventDefault();
     submitSearch(query);
   };
-  
+
   return (
     <li key={idx}>
-      <a href="" onClick={search}>{query}</a>
+      <a onClick={search}>{query}</a>
     </li>
   );
 };

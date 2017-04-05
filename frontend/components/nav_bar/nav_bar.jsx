@@ -45,13 +45,26 @@ class NavBar extends React.Component {
   render() {
     let profileLink, signInLink, signUpOutButton;
     if (this.props.currentUser) {
-      profileLink = <li><Link to="/profile">Profile</Link></li>;
-      signUpOutButton = <li><button onClick={this.signOut}>Sign Out</button></li>;
+      profileLink = <li>
+        <Link to="/profile">Profile</Link>
+      </li>;
+
+      signUpOutButton = <li>
+        <button onClick={this.signOut}>Sign Out</button>
+      </li>;
     }
     else {
-      signInLink = <li><a href="#" onClick={this.openForm("signin")}>Sign In</a></li>;
-      profileLink = <li><a href="#" onClick={this.openForm("signup")}>Profile</a></li>;
-      signUpOutButton = <li><button onClick={this.openForm("signup")}>Sign Up</button></li>;
+      signInLink = <li>
+        <a href="#" onClick={this.openForm("signin")}>Sign In</a>
+      </li>;
+
+      profileLink = <li>
+        <a href="#" onClick={this.openForm("signup")}>Profile</a>
+      </li>;
+
+      signUpOutButton = <li>
+        <button onClick={this.openForm("signup")}>Sign Up</button>
+      </li>;
     }
 
     return (

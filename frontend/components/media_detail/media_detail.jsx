@@ -27,8 +27,7 @@ class MediaDetail extends React.Component {
     if (mediaDetail.Poster === "N/A") {
       visibility = "hidden";
     }
-    console.log(mediaDetail.Poster === "N/A");
-    console.log(visibility);
+
     return (
       <section className="media-detail">
         <img src={mediaDetail.Poster} className={visibility}/>
@@ -39,12 +38,23 @@ class MediaDetail extends React.Component {
         </div>
             <div className="media-detail-info">
               <p className="detail-subheader">
-                Released {mediaDetail.Released} | {mediaDetail.Genre} | {mediaDetail.imdbRating}/10
+                Released {mediaDetail.Released}{" | "}
+                {mediaDetail.Genre}{" | "}
+                {mediaDetail.imdbRating}/10
               </p>
               <ul className="cast-info">
-                <li><span className="label">Director:</span> {mediaDetail.Director}</li>
-                <li><span className="label">Writer:</span> {mediaDetail.Writer}</li>
-                <li><span className="label">Actors:</span> {mediaDetail.Actors}</li>
+                <li>
+                  <span className="label">{"Director: "}</span>
+                  {mediaDetail.Director}
+                </li>
+                <li>
+                  <span className="label">{"Writer: "}</span>
+                  { mediaDetail.Writer}
+                </li>
+                <li>
+                  <span className="label">{"Actors: "}</span>
+                  { mediaDetail.Actors}
+                </li>
               </ul>
               <br />
               <p>{mediaDetail.Plot}</p>

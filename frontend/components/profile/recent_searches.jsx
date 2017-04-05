@@ -9,7 +9,6 @@ class RecentSearches extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props.currentUser.id);
     this.props.requestUserSearches(this.props.currentUser.id);
   }
 
@@ -24,9 +23,9 @@ class RecentSearches extends React.Component {
     if (recentSearches) {
       recentsLinks = recentSearches.map((query, idx) => {
         return <SearchLink key={idx}
-                            idx={idx}
-                            query={query}
-                            submitSearch={this.submitSearch} />;
+                           idx={idx}
+                           query={query}
+                           submitSearch={this.submitSearch} />;
       });
     }
 

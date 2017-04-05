@@ -37,7 +37,12 @@ class SessionForm extends React.Component {
 
   demoLogin(e) {
     e.preventDefault();
-    const user = { user: { username: "movie-bug", password: "password" } };
+    const user = {
+      user: {
+        username: "movie-bug",
+        password: "password"
+      }
+    };
     this.props.signin(user).then(() => this.clearAndClose());
   }
 
@@ -87,8 +92,7 @@ class SessionForm extends React.Component {
 
   render() {
     const { username, password } = this.state.user;
-
-    const signState = this.state.formType == "signin" ? "Sign In" : "Sign Up";
+    const signState = this.state.formType === "signin" ? "Sign In" : "Sign Up";
 
     let errors;
     if (this.props.errors.length > 0) {
