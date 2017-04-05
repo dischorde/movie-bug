@@ -5,7 +5,8 @@ import { fetchSearchResults,
          requestRecentSearches } from '../../actions/search_actions.js';
 
 const mapStateToProps = state => ({
-  recentSearches: state.recentSearches
+  recentSearches: state.recentSearches,
+  errors: state.results.errors
 });
 
 const mapDispatchToProps = dispatch => {

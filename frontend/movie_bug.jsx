@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import configureStore from './store/store.js';
 import Root from './components/root.jsx';
+import { searchMovies } from './util/omdb_api_util.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   Modal.setAppElement(document.body);
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let store = configureStore(preloadedState);
   window.store = store;
+  window.searchMovies = searchMovies;
 
   ReactDOM.render(<Root store={ store }/>, root);
 });

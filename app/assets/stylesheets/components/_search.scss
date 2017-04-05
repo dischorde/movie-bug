@@ -65,3 +65,14 @@
 .search-recent-links li {
   padding: 0 5px;
 }
+
+.search-errors {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-top: 20px;
+  font-family: $montserrat;
+  border-top: 2px solid $teal;
+  border-bottom: 2px solid $teal;
+  padding: 5px 0;
+}

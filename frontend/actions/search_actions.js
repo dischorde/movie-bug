@@ -3,6 +3,7 @@ import * as SearchAPIUtil from '../util/search_api_util.js';
 
 export const RECEIVE_RESULTS = "RECEIVE_RESULTS";
 export const RECEIVE_SEARCHES = "RECEIVE_SEARCHES";
+export const RECEIVE_SEARCH_ERRORS = "RECEIVE_SEARCH_ERRORS";
 
 export const receiveSearchResults = results => ({
   type: RECEIVE_RESULTS,
@@ -14,9 +15,21 @@ export const receiveRecentSearches = searches => ({
   searches
 });
 
+export const receiveSearchErrors = errors => ({
+  type: RECEIVE_SEARCH_ERRORS,
+  errors
+});
+
 export const fetchSearchResults = query => dispatch => {
   return OMDBAPIUtil.searchMovies(query)
-  .then(results => dispatch(receiveSearchResults(results.Search)));
+  .then(results => {
+    if (results.Response === "True") {
+      return dispatch(receiveSearchResults(results.Search));
+    }
+    else {
+      return dispatch(receiveSearchErrors(results.Error));
+    }
+  });
 };
 
 export const saveSearchQuery = query => dispatch => {

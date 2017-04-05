@@ -11,6 +11,7 @@ class Search extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateQuery = this.updateQuery.bind(this);
     this.submitSearch = this.submitSearch.bind(this);
+    this.determineSuccess = this.determineSuccess.bind(this);
   }
 
   componentDidMount() {
@@ -28,16 +29,21 @@ class Search extends React.Component {
     if (this.state.query !== "") {
       this.submitSearch(this.state.query);
     }
-    // TODO: error handling
+  }
+
+  determineSuccess() {
+    if (!this.props.errors) {
+      this.props.router.push("/results");
+    }
   }
 
   submitSearch(query) {
     this.props.search(query)
-    .then(() => this.props.router.push("/results"));
+    .then(() => this.determineSuccess());
   }
 
   render() {
-    const { recentSearches } = this.props;
+    const { recentSearches, errors } = this.props;
     let recentsLinks;
     if (recentSearches) {
       recentsLinks = recentSearches.map((query, idx) => {
@@ -70,6 +76,7 @@ class Search extends React.Component {
             { recentsLinks }
           </ul>
         </div>
+        <span className="search-errors">{errors}</span>
       </section>
     );
   }
