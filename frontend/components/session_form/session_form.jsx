@@ -17,6 +17,7 @@ class SessionForm extends React.Component {
     this.switchForm = this.switchForm.bind(this);
     this.processForm = this.processForm.bind(this);
     this.makeLink = this.makeLink.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   updateState(field) {
@@ -32,6 +33,12 @@ class SessionForm extends React.Component {
   clearAndClose() {
     this.props.receiveErrors([]);
     this.props.closeModal();
+  }
+
+  demoLogin(e) {
+    e.preventDefault();
+    const user = { user: { username: "movie-bug", password: "password" } };
+    this.props.signin(user).then(() => this.clearAndClose());
   }
 
   processForm(e) {
@@ -58,18 +65,21 @@ class SessionForm extends React.Component {
   makeLink() {
     if (this.state.formType === "signin") {
       return (
+        <div className="switch-form">
           <a href="#" onClick={this.switchForm("signup")}>
             {"Haven't Joined? Click to Sign Up!"}
           </a>
+        <a onClick={this.demoLogin}>{"Demo Login"}</a>
+      </div>
       );
     }
     else {
       return (
         <div className="switch-form">
-          <a href="#" onClick={this.switchForm("signin")}>
+          <a onClick={this.switchForm("signin")}>
             {"Already Signed Up? Click to Sign In!"}
           </a>
-          <a>{"Demo Login"}</a>
+          <a onClick={this.demoLogin}>{"Demo Login"}</a>
         </div>
       );
     }
