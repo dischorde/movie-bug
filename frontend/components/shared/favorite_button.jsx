@@ -5,7 +5,6 @@ class FavoriteButton extends React.Component {
     super(props);
 
     this.makeFavoriteButton = this.makeFavoriteButton.bind(this);
-    this.makeNotClickable = this.makeNotClickable.bind(this);
     this.unfavorite = this.unfavorite.bind(this);
     this.favorite = this.favorite.bind(this);
   }

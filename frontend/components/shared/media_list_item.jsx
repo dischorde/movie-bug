@@ -5,7 +5,6 @@ import FavoriteButtonContainer from './favorite_button_container.jsx';
 class MediaListItem extends React.Component {
   constructor(props) {
     super(props);
-    this.convertElementKeys = this.convertElementKeys.bind(this);
   }
 
   convertElementKeys() {
